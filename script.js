@@ -25,6 +25,9 @@ function pickCharacter(numOfChars) {
 }
 
 function generatePassword () {
+  arrayOfArrays = [];
+  blankPassword = "";
+  arrayChooseFrom = [];
   var passwordLength = prompt("How many characters would you like your password to be? (must be greater than 8 characters and less than 128 characters)");
   // console.log(parseInt(passwordLength,10));
   //passwordLength is a string and the comparison in the "if" statement will try to change its type to a number. If the user puts in a Nan it will go to the else statement
