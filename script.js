@@ -25,9 +25,11 @@ function pickCharacter(numOfChars) {
 }
 
 function generatePassword () {
+  //reseting the variables and text area to blank
   arrayOfArrays = [];
   blankPassword = "";
   arrayChooseFrom = [];
+
   var passwordLength = prompt("How many characters would you like your password to be? (must be greater than 8 characters and less than 128 characters)");
   // console.log(parseInt(passwordLength,10));
   //passwordLength is a string and the comparison in the "if" statement will try to change its type to a number. If the user puts in a Nan it will go to the else statement
@@ -36,6 +38,11 @@ function generatePassword () {
       var uppercase = confirm("Would you like uppercase letters in your password?");
       var numbers = confirm("Would you like numbers in your password?");
       var special = confirm("Would you like special characters in your password?");
+  
+  if(!lowercase && !uppercase && !numbers && !special) {
+    alert("You must choose at least 1 type of characters to include in your password");
+    return generatePassword();
+  }
 
   //if the user selects "confirm" for any of the character types to go in their password then the array holder those character types gets added to an array of arrays  
   if(lowercase) {
